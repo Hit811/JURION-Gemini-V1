@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-legal-950: #000000;
+  --color-legal-900: #000000;
+  --color-legal-800: #1a1a1a;
+  --color-legal-700: #2a2a2a;
+  --color-legal-600: #3a3a3a;
+  --color-legal-500: #000000;
+  --color-brand-yellow: #FFD700;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-black antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+.legal-card {
+  @apply bg-white border-[3px] border-black rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)];
+}
+
+.brutalist-button {
+  @apply bg-black text-white px-6 py-4 font-black uppercase tracking-tight border-[3px] border-black rounded-none transition-colors hover:bg-brand-yellow hover:text-black;
+}
+
+.brutalist-border {
+  @apply border-[3px] border-black;
+}
+
+.markdown-body {
+  @apply text-black leading-tight;
+}
+.markdown-body h1 { @apply text-4xl font-black uppercase tracking-tighter mb-6; }
+.markdown-body h2 { @apply text-2xl font-black uppercase tracking-tighter mt-8 mb-4 border-b-[2px] border-black pb-2; }
+.markdown-body h3 { @apply text-xl font-black uppercase tracking-tighter mt-6 mb-2; }
+.markdown-body p { @apply mb-4 font-medium; }
+.markdown-body ul { @apply list-none mb-4 space-y-1; }
+.markdown-body ol { @apply list-decimal pl-6 mb-4 space-y-1; }
+.markdown-body li { @apply pl-1 border-b border-black/10 py-1; }
+.markdown-body blockquote { @apply border-l-[6px] border-black pl-4 italic font-bold my-6; }
+.markdown-body table { @apply w-full border-[3px] border-black mb-6; }
+.markdown-body th, .markdown-body td { @apply border border-black p-3 text-sm font-bold; }
+.markdown-body th { @apply bg-slate-100 font-black uppercase text-left; }
+
+/* Risk Level Highlighting */
+.risk-tag {
+  @apply inline-block px-3 py-1 font-black text-xs uppercase tracking-widest border-[2px] border-black mb-2 mr-2;
+}
+.risk-high { @apply bg-[#e74c3c] text-white; }
+.risk-medium { @apply bg-[#f1c40f] text-black; }
+.risk-low { @apply bg-[#27ae60] text-white; }
